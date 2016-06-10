@@ -1,6 +1,6 @@
 #!/bin/php
 <?php
-/*** Set $tr to the transmission-remote path. Add a space to the end of the string **/
+/** Set $tr to the transmission-remote path. Add a space to the end of the string **/
 $tr = '/usr/local/bin/transmission-remote ';
 exec($tr.'--list', $arrTorrents);
 foreach($arrTorrents as $idx=>$torrent)
