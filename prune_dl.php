@@ -7,14 +7,11 @@ foreach($arrTorrents as $idx=>$torrent)
         if($idx>0)
         {
                 $pctcomplete = substr($torrent,7,3);
-                if($pctcomplete != '  0' && $pctcomplete != '   ' )
+                if($pctcomplete == '100')
                 {
                         $tid = str_replace(" ", "", substr($torrent, 0, 4));
-                        if($pctcomplete == '100')
-                        { 
-                                $command = $tr."-t $tid -r";
-                                exec($command);
-                        } 
+                        $command = $tr."-t $tid -r";
+                        exec($command); 
                 }
         }
 }
